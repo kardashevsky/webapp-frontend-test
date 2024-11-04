@@ -9,9 +9,21 @@
     <link rel="stylesheet" href="TemplateData/styles.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
-      body {
+      /* Стили для растягивания приложения на весь экран */
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 100%;
         background-color: #ffffff;
         color: #000000; /* Для улучшения читаемости текста */
+      }
+      #data-output {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh; /* Занимает полную высоту экрана */
       }
     </style>
   </head>
@@ -22,13 +34,17 @@
     <script src="miniapp-data.js" type="module"></script>
     <script type="module">
       import collectMiniAppData from './miniapp-data.js';
-      
+
+      // Функция для отображения данных на экране
       function displayMiniAppData() {
         const data = collectMiniAppData();
         const dataOutput = document.getElementById('data-output');
         dataOutput.textContent = JSON.stringify(data, null, 2);
       }
-      
+
+      // Разворачиваем приложение на весь экран и отображаем данные
+      Telegram.WebApp.ready();
+      Telegram.WebApp.expand();  // Растягивание на весь экран
       displayMiniAppData();
     </script>
   </body>
