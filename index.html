@@ -12,12 +12,20 @@
       body {
         background-color: #ffffff;
         color: #000000; /* Для улучшения читаемости текста */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+        margin: 0;
       }
     </style>
   </head>
 
   <body>
     <pre id="data-output"></pre>
+    
+    <!-- Кнопка с вибрацией -->
+    <button id="vibrateButton">Нажми для вибрации</button>
     
     <script src="miniapp-data.js" type="module"></script>
     <script type="module">
@@ -30,6 +38,13 @@
       }
       
       displayMiniAppData();
+
+      // Добавляем вибрацию на кнопку
+      document.getElementById('vibrateButton').addEventListener('click', () => {
+        if (Telegram.WebApp.HapticFeedback) {
+          Telegram.WebApp.HapticFeedback.impactOccurred('light');
+        }
+      });
     </script>
   </body>
 </html>
