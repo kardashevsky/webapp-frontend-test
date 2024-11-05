@@ -1,9 +1,9 @@
 const buildUrl = "Build";
-const loaderUrl = buildUrl + "/Build.loader.js";
+const loaderUrl = buildUrl + "/BuildDecompressionFallback.loader.js";
 const config = {
-  dataUrl: buildUrl + "/Build.data.br",
-  frameworkUrl: buildUrl + "/Build.framework.js.br",
-  codeUrl: buildUrl + "/Build.wasm.br",
+  dataUrl: buildUrl + "/BuildDecompressionFallback.data.unityweb",
+  frameworkUrl: buildUrl + "/BuildDecompressionFallback.framework.js.unityweb",
+  codeUrl: buildUrl + "/BuildDecompressionFallback.wasm.unityweb",
   streamingAssetsUrl: "StreamingAssets",
   companyName: "DefaultCompany",
   productName: "TestTemplate",
