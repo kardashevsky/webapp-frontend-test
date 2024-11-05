@@ -4,47 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Kek</title>
-    <link rel="shortcut icon" href="TemplateData/logo.svg">
-    <link rel="stylesheet" href="TemplateData/styles.css">
+    <title>WebApp Test Frontend</title>
+    <link rel="shortcut icon" href="logo.svg">
+    <link rel="stylesheet" href="index.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <style>
-      body {
-        background-color: #ffffff;
-        color: #000000; /* Для улучшения читаемости текста */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100vh;
-        margin: 0;
-      }
-    </style>
   </head>
 
   <body>
     <pre id="data-output"></pre>
-    
-    <!-- Кнопка с вибрацией -->
     <button id="vibrateButton">Нажми для вибрации</button>
-    
-    <script src="miniapp-data.js" type="module"></script>
-    <script type="module">
-      import collectMiniAppData from './miniapp-data.js';
-      
-      function displayMiniAppData() {
-        const data = collectMiniAppData();
-        const dataOutput = document.getElementById('data-output');
-        dataOutput.textContent = JSON.stringify(data, null, 2);
-      }
-      
-      displayMiniAppData();
-
-      // Добавляем вибрацию на кнопку
-      document.getElementById('vibrateButton').addEventListener('click', () => {
-        if (Telegram.WebApp.HapticFeedback) {
-          Telegram.WebApp.HapticFeedback.impactOccurred('light');
-        }
-      });
-    </script>
+    <script src="index.js" type="module"></script>
   </body>
 </html>

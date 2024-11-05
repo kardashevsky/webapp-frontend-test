@@ -1,5 +1,5 @@
 // Функция для сбора всех данных MiniApp в объект
-export default function collectMiniAppData() {
+export function collectMiniAppData() {
   return {
     initData: Telegram.WebApp.initData || null,
     initDataUnsafe: Telegram.WebApp.initDataUnsafe || null,
@@ -28,3 +28,20 @@ export default function collectMiniAppData() {
     }
   };
 }
+
+// Функция для отображения данных MiniApp на странице
+function displayMiniAppData() {
+  const data = collectMiniAppData();
+  const dataOutput = document.getElementById('data-output');
+  dataOutput.textContent = JSON.stringify(data, null, 2);
+}
+
+// Инициализация отображения данных MiniApp
+displayMiniAppData();
+
+// Добавление вибрации на кнопку
+document.getElementById('vibrateButton').addEventListener('click', () => {
+  if (Telegram.WebApp.HapticFeedback) {
+    Telegram.WebApp.HapticFeedback.impactOccurred('light');
+  }
+});
