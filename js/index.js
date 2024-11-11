@@ -47,7 +47,7 @@ try {
 
 let fitGameScreen = () => {
   if (scaleToFit == true)
-    fit(container, 500, 500, 1080, 2340);
+    fit(container, 500, 500, 375, 703);
 };
 
 window.addEventListener('resize', fitGameScreen);
