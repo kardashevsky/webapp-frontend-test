@@ -2,31 +2,63 @@
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>TestTemplate</title>
-    <link rel="shortcut icon" href="TemplateData/logo.svg">
-    <link rel="stylesheet" href="TemplateData/styles.css">
+    <link rel="shortcut icon" href="assets/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preload" href="assets/background.svg" as="image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
   </head>
 
   <body>
     <div id="unity-container">
       <canvas id="unity-canvas" class="unity-canvas"></canvas>
-
       <div id="canvas-overlay" class="canvas-overlay">
         <div id="loading-page" class="loading-page">
           <div class="loading-page__content">
-            <img src="TemplateData/logo.svg" class="logo">
+            <img src="assets/logo.svg" class="logo" alt="Logo">
 
+            <span id="text-comment" class="text-comment">Здесь ты можешь...</span>
             <div class="progress-bar loading-page__progress-bar">
               <div id="progress-bar-fill" class="progress-bar-fill"></div>
             </div>
+            <span id="progress-percentage" class="progress-percentage">0%</span>
           </div>
         </div>
       </div>
+
     </div>
 
-    <script src="TemplateData/fit.js"></script>
-    <script src="TemplateData/game-loader.js"></script>
+    <!-- <div id="gradient-overlay">
+      <img src="assets/gradient.svg" alt="Gradient Overlay" class="gradient-overlay-image">
+    </div>
+
+    <img src="assets/female_asian.svg" class="female-asian" alt="Female Asian">
+    <img src="assets/female_blond.svg" class="female-blond" alt="Female Blond">
+    <img src="assets/male_white.svg" class="male-white" alt="Male White">
+    <img src="assets/male_with_beard.svg" class="male-with-beard" alt="Male with Beard">
+    <img src="assets/baloons.svg" class="baloons" alt="Baloons">
+
+    <button id="show-data-btn" style="
+      position: fixed;
+      top: 40px;
+      left: 20px;
+      padding: 10px 20px;
+      font-size: 14px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1001;
+    ">Data</button> -->
+
+    <script src="js/telegram-init.js" defer></script>
+    <script src="js/index.js" defer></script>
   </body>
 </html>
